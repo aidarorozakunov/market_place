@@ -7,6 +7,7 @@ from market_place import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include('applications.account.urls')),
+    path('goods/', include('applications.goods.urls')),
     path('category/', include('applications.category.urls')),
     path('order/', include('applications.order.urls')),
     path('review/', include('applications.review.urls')),

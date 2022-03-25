@@ -59,3 +59,20 @@ class ProfileUpdateView(generics.UpdateAPIView):
     serializer_class = ProfileSerializer
     permission_classes = [IsAuthenticated, IsProfileAuthor, ]
 
+#
+# class FavoriteView(APIView):
+#     permission_classes = [IsAuthenticated, ]
+#
+#     def get(self, request, pk):
+#         profile = Profile.objects.get(user=request.user.id)
+#         if profile.favorite.filter(id=pk).exists():
+#             profile.favorite.set(profile.favorite.exclude(id=pk))
+#             msg = 'Goods was deleted from favorites!'
+#         else:
+#             profile.favorite.add(pk)
+#             profile.save()
+#             msg = 'Goods added to favorite successfully!'
+#         return Response(msg, status=status.HTTP_200_OK)
+#
+#
+#

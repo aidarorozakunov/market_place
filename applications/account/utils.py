@@ -1,6 +1,8 @@
 from django.core.mail import send_mail
+from market_place.celery import app
 
 
+@app.task
 def send_activation_email(email, activation_code):
     activation_url = f'http://localhost:8000/account/activate/{activation_code}'
     message = f'''

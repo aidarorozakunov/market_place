@@ -39,7 +39,7 @@ class GoodsSerializer(serializers.ModelSerializer):
             rep['total_rating'] = sum(total_rating) / len(total_rating)
         else:
             rep['total_rating'] = ''
-        rep['images'] = GoodsImageSerializer(GoodsImage.objects.filter(product=instance.id), many=True, context=self.context).data
-        rep['reviews'] = ReviewSerializer(instance.review.filter(product=instance.id), many=True).data
+        rep['images'] = GoodsImageSerializer(GoodsImage.objects.filter(goods=instance.id), many=True, context=self.context).data
+        rep['reviews'] = ReviewSerializer(instance.review.filter(goods=instance.id), many=True).data
         return rep
 
