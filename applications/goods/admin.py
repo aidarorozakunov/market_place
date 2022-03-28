@@ -12,7 +12,7 @@ class InlineGoodsImage(admin.TabularInline):
 
 class GoodsAdminDisplay(admin.ModelAdmin):
     inlines = [InlineGoodsImage, ]
-    list_display = ('title', 'in_stock', 'quantity', 'image', 'get_first_name')
+    list_display = ('title', 'in_stock', 'quantity', 'image', 'get_first_name', 'get_phone_number')
     list_editable = ('in_stock', 'quantity')
     search_fields = ('title', )
     list_filter = ('category', )
@@ -20,6 +20,10 @@ class GoodsAdminDisplay(admin.ModelAdmin):
     @admin.display(ordering='profile__first_name', description='first_name')
     def get_first_name(self, obj):
         return obj.profile.first_name
+
+    @admin.display(ordering='profile__number', description='phone_number')
+    def get_phone_number(self, obj):
+        return obj.profile.number
 
     def image(self, obj):
         img = obj.image.first()
