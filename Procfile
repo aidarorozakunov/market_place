@@ -1,1 +1,1 @@
-worker: python manage.py
+web: gunicorn market_place.wsgi --log-file-
