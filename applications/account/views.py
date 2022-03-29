@@ -59,7 +59,7 @@ class ProfileUpdateView(generics.UpdateAPIView):
     serializer_class = ProfileSerializer
     permission_classes = [IsAuthenticated, IsProfileAuthor, ]
 
-#
+# пока не трогать
 # class FavoriteView(APIView):
 #     permission_classes = [IsAuthenticated, ]
 #

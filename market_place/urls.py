@@ -29,6 +29,7 @@ urlpatterns = [
     path('category/', include('applications.category.urls')),
     path('order/', include('applications.order.urls')),
     path('review/', include('applications.review.urls')),
+    path('chat/', include('applications.djangochat.urls')),
     path('swagger(.json|.yaml)', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),

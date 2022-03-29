@@ -1,0 +1,1 @@
+web: gunicorn market_place.wsgi --log-file-
